@@ -11,9 +11,8 @@
 ## เตรียมไฟล์ที่ใช้ในแบบฝึกหัด
 
 ดาวน์โหลดหรือเปิดไฟล์ต่อไปนี้เพื่อเตรียมใช้งาน:
-- 📄 [cpall-product-catalog.csv](../../files/cpall-product-catalog.csv) — ข้อมูล catalog สินค้า 7-Eleven
+- 📄 [expense_policy.pdf](https://github.com/teerasej/m365-copilot-advanced-and-agent-public/raw/main/exercises/part2-02-adding-knowledge/files/expense_policy.pdf) — เอกสารนโยบายการเบิกค่าใช้จ่ายของบริษัท
 
-> 💡 **เคล็ดลับ:** คุณสามารถเปิดไฟล์ `.csv` ด้วย Excel ได้เลยโดยไม่ต้องแปลงรูปแบบไฟล์
 
 ---
 
@@ -31,7 +30,7 @@
 
 4. เลือกตัวเลือก **Upload files** (อัพโหลดไฟล์)
 
-5. กดปุ่ม **Select to Browse** แล้วเลือกไฟล์ `Expense_Policy.pdf` จากเครื่องของคุณ
+5. กดปุ่ม **Select to Browse** แล้วเลือกไฟล์ `expense_policy.pdf` จากเครื่องของคุณ
 
    ![ภาพเลือกไฟล์](./images/select-file.png)
 

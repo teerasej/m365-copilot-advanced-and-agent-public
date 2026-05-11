@@ -39,9 +39,9 @@
 
 ## 📁 ไฟล์ประกอบ
 
-| ไฟล์ | ใช้ใน |
-|------|-------|
-| [cpall-product-catalog.csv](./files/cpall-product-catalog.csv) | Part 2 - Exercise 2: Adding Knowledge |
+| ไฟล์ | ใช้ใน | ดาวน์โหลด |
+|------|-------|-----------|
+| [expense_policy.pdf](https://github.com/teerasej/m365-copilot-advanced-and-agent-public/raw/main/exercises/part2-02-adding-knowledge/files/expense_policy.pdf) | Part 2 - Exercise 2: Adding Knowledge | [ดาวน์โหลดไฟล์](https://github.com/teerasej/m365-copilot-advanced-and-agent-public/raw/main/exercises/part2-02-adding-knowledge/files/expense_policy.pdf) |
 
 ---
 
