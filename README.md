@@ -21,7 +21,7 @@
 | # | แบบฝึกหัด | License |
 |---|-----------|---------|
 | 1 | [Prompt Gallery — สร้างและแชร์ Prompt ให้เพื่อนร่วมงาน](./exercises/part1-01-prompt-gallery/README.md) | 🆓 ใช้ได้ทั้ง free และ license |
-| 2 | [Copilot Page — รวบรวมข้อมูลและทำงานร่วมกันในทีม](./exercises/part1-02-copilot-page/README.md) | 🔑 ต้องการ M365 Copilot License |
+| 2 | [Copilot Page — รวบรวมข้อมูลและทำงานร่วมกันในทีม](./exercises/part1-02-copilot-page/README.md) | 🆓 ใช้ได้ทั้ง free และ license |
 | 3 | [Copilot Notebook — วิเคราะห์ข้อมูลอย่างเป็นระบบ](./exercises/part1-03-copilot-notebook/README.md) | 🔑 ต้องการ M365 Copilot License |
 
 ---
