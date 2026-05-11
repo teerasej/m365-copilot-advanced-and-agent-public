@@ -4,7 +4,7 @@
 
 ในแบบฝึกหัดนี้ เราจะสร้าง **AI Agent** ตัวแรกของเราผ่าน **Copilot Studio** โดย Agent ที่สร้างจะทำหน้าที่ตอบคำถามเกี่ยวกับนโยบาย HR ของ CPAll — เช่น การลา, สวัสดิการ, และการเบิกค่าใช้จ่าย
 
-> ⚠️ **หมายเหตุ:** ถ้ายังไม่มีสิทธิ์เข้า Copilot Studio ในองค์กร ให้ขอจาก IT Admin หรือทดลองดูขั้นตอนไปพร้อมกับเพื่อนที่มีสิทธิ์ก่อนได้เลย
+> ⚠️ **หมายเหตุ:** ถ้ายังไม่มีสิทธิ์เข้า Copilot Studio ในองค์กร ให้ขอจาก IT Admin หรือทดลองดูขั้นตอนไปพร้อมกับเพื่อนที่มี license ก่อนได้เลย
 
 ---
 
@@ -14,7 +14,7 @@
 
 2. Login ด้วย Microsoft account ขององค์กร
 
-3. ตรวจสอบว่าอยู่ใน **Environment** ที่ถูกต้อง (สังเกตที่มุมขวาบน ควรแสดงชื่อองค์กรของคุณ)
+3. ตรวจสอบว่าอยู่ใน **Environment** ที่ถูกต้อง (สังเกตที่มุมขวาบน ควรแสดงชื่อองค์กร หรือชื่อ Environment ที่กำหนด)
 
    ![ภาพหน้า Login Copilot Studio](./images/copilot-studio-login.png)
 
@@ -22,57 +22,38 @@
 
 ## ขั้นตอนที่ 2: สร้าง Agent ใหม่
 
-1. จากเมนูด้านซ้าย ให้คลิกที่ **Create**
+1. จากเมนูด้านซ้าย ให้คลิกที่ **Agent** เพื่อแสดงรายการ Agent ที่มีอยู่ใน Environment (ถ้ามี)
+   ![alt text](./images/agent-list.png)
 
-   ![ภาพเมนู Create](./images/create-menu.png)
 
-2. คลิกปุ่ม **New agent** ที่มุมขวาบนของหน้า
+2. ในช่อง prompt ด้านบน จะเป็นส่วนที่ทำให้เราสามารถสร้าง Agent ด้วยการพิมพ์อธิบายหน้าที่ให้เป็นภาษาธรรมชาติ (Natural Language) 
 
-   ![ภาพปุ่ม New Agent](./images/new-agent-button.png)
-
-3. ระบบจะเข้าสู่โหมด **Describe** ซึ่งเป็นการสร้าง Agent ด้วยการพิมพ์อธิบายหน้าที่ให้เป็นภาษาธรรมดา
-
-   ![ภาพโหมด Describe](./images/describe-mode.png)
+   ![ภาพโหมด Describe](./images/describe-agent.png)
 
 ---
 
-## ขั้นตอนที่ 3: กำหนดหน้าที่ให้ Agent ด้วยภาษาธรรมดา
+## ขั้นตอนที่ 3: กำหนดหน้าที่ให้ Agent ด้วย Natural Language
 
-1. ในช่องแชทของโหมด Describe ให้คัดลอกข้อความด้านล่างนี้ไปวาง แล้วกด Enter:
+1. ในช่อง Prompt ให้คัดลอกข้อความด้านล่างนี้ไปวาง แล้วกด Enter:
 
    ```
    You are a helpful HR assistant for CPAll employees. You answer questions about company HR policies including leave requests, expense claims, employee benefits, and working hour regulations. Only answer questions related to HR topics.
    ```
 
-   ![ภาพการกำหนด Instruction](./images/set-instruction.png)
+2. Copilot Studio จะตอบรับและสรุปขอบเขตการทำงานของ Agent ให้ จากนั้นจะมีการกำหนดชื่อชั่วคราวให้ Agent นี้ เช่น "HR Assistant" หรือ "CPAll HR Bot" ขึ้นอยู่กับระบบ
 
-2. Copilot Studio จะตอบรับและสรุปขอบเขตการทำงานของ Agent ให้ จากนั้นจะถามชื่อ Agent
+   ![ภาพสรุปหน้าที่ Agent](./images/draft-agent.png)
 
-3. ตั้งชื่อ Agent ว่า:
+3. กดปุ่ม Edit และตั้งชื่อ Agent ว่า:
 
    ```
-   CPAll HR Assistant
+   CPAll HR Assistant [ชื่อตัวเอง]
    ```
 
-4. กด Enter และรอให้ระบบยืนยัน
+4. กด ปุ่ม Save และรอให้ระบบยืนยัน
 
 ---
-
-## ขั้นตอนที่ 4: เพิ่มคำสั่งเสริม (ถ้าต้องการ)
-
-1. คุณสามารถเพิ่มรายละเอียดขอบเขตการทำงานให้ชัดขึ้นได้ เช่น:
-
-   ```
-   Always answer in Thai language. Keep responses concise and professional. If you don't know the answer, suggest contacting the HR department directly.
-   ```
-
-2. กด Enter เพื่อบันทึกคำสั่งเสริม
-
-> 💡 **เคล็ดลับ:** การเขียนคำสั่ง (Instruction) ให้ Agent ชัดเจนจะช่วยให้ Agent ตอบคำถามได้ตรงประเด็นมากขึ้น และลดโอกาสที่ Agent จะตอบเรื่องที่ไม่เกี่ยวข้อง
-
----
-
-## ขั้นตอนที่ 5: ทดสอบ Agent
+## ขั้นตอนที่ 4: ทดสอบ Agent
 
 1. สังเกตด้านขวาของหน้าจอ จะมีหน้าต่างพรีวิว Agent พร้อมให้ทดสอบทันที
 
@@ -84,27 +65,38 @@
    ลาป่วยได้กี่วันต่อปี?
    ```
 
-3. ทดสอบอีกครั้งกับคำถามที่อยู่นอกขอบเขต เพื่อดูว่า Agent ปฏิเสธอย่างไร:
+3. ตรวจสอบว่า Agent ตอบคำถามได้ตรงประเด็นหรือไม่ ซึ่งสังเกตว่า เป็นการตอบคำถามแบบทั่วๆ ไป บางกรณีอาจจะไปค้นข้อมูลใน internet มาตอบ
+
+4. ทดสอบอีกครั้งกับคำถามที่อยู่นอกขอบเขต เพื่อดูว่า Agent ปฏิเสธอย่างไร:
 
    ```
    ช่วยแนะนำร้านอาหารใกล้สำนักงานหน่อย
    ```
 
-4. Agent ควรปฏิเสธคำถามข้อที่ 2 เนื่องจากอยู่นอกขอบเขตที่กำหนดไว้
+5. Agent ควรปฏิเสธคำถามข้อที่ 2 เนื่องจากอยู่นอกขอบเขตที่กำหนดไว้
 
 ---
 
-## ขั้นตอนที่ 6: สร้าง Agent และไปยังหน้าตั้งค่า
 
-1. เมื่อทดสอบแล้วพอใจ ให้กดปุ่ม **Create** ที่มุมขวาบน
+## ขั้นตอนที่ 5: เพิ่มคำสั่งเสริม ใน Instruction (ถ้าต้องการ)
 
-   ![ภาพปุ่ม Create](./images/create-button.png)
+1. คุณสามารถเพิ่มรายละเอียดขอบเขตการทำงานให้ชัดขึ้นได้ โดยการกดปุ่ม **Edit** และเพิ่มคำสั่งในส่วน Instruction เข้าไปด้านล่างของเดิม เช่น:
 
-2. รอสักครู่ ระบบจะประมวลผลและสร้าง Agent ของคุณ
+   ```
+   Always answer in Thai language. Keep responses concise and professional. If you don't know the answer, suggest contacting the HR department directly.
+   ```
+   ![ภาพเพิ่ม Instruction](./images/set-instruction.png)
 
-3. หลังจากสร้างเสร็จ ระบบจะนำคุณไปยังหน้าการตั้งค่า Agent ซึ่งเราจะมาปรับแต่งเพิ่มเติมในแบบฝึกหัดถัดไป
+2. กด **Save** เพื่อบันทึก instruction ใหม่
+3. ทดสอบอีกครั้งกับคำถามชุดเดิม:
+   ```
+   ลาป่วยได้กี่วันต่อปี?
+   ```
+   ```
+   ช่วยแนะนำร้านอาหารใกล้สำนักงานหน่อย
+   ```
 
-> **สิ้นสุดขั้นตอนนี้ — คุณมี Agent ใหม่ชื่อ "CPAll HR Assistant" พร้อมใช้งานแล้ว!**
+> 💡 **เคล็ดลับ:** การเขียนคำสั่ง (Instruction) ให้ Agent ชัดเจนจะช่วยให้ Agent ตอบคำถามได้ตรงประเด็นมากขึ้น และลดโอกาสที่ Agent จะตอบเรื่องที่ไม่เกี่ยวข้อง
 
 ---
 
