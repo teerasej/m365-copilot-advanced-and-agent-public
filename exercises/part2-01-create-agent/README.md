@@ -2,7 +2,7 @@
 
 🔑 **ต้องการ M365 Copilot License + สิทธิ์เข้าใช้ Copilot Studio**
 
-ในแบบฝึกหัดนี้ เราจะสร้าง **AI Agent** ตัวแรกของเราผ่าน **Copilot Studio** โดย Agent ที่สร้างจะทำหน้าที่ตอบคำถามเกี่ยวกับนโยบาย HR ของ CPAll — เช่น การลา, สวัสดิการ, และการเบิกค่าใช้จ่าย
+ในแบบฝึกหัดนี้ เราจะสร้าง **AI Agent** ตัวแรกของเราผ่าน **Copilot Studio** โดยใช้ **Prompt** เพื่อบอกหน้าที่ของ Agent ให้ชัดเจนตั้งแต่ต้น เป้าหมายคือสร้างผู้ช่วย HR สำหรับพนักงาน CPAll ที่ช่วยตอบคำถามเรื่อง **การเบิกค่าใช้จ่าย** และ **ข่าวสารหรือประกาศขององค์กร**
 
 > ⚠️ **หมายเหตุ:** ถ้ายังไม่มีสิทธิ์เข้า Copilot Studio ในองค์กร ให้ขอจาก IT Admin หรือทดลองดูขั้นตอนไปพร้อมกับเพื่อนที่มี license ก่อนได้เลย
 
@@ -37,7 +37,7 @@
 1. ในช่อง Prompt ให้คัดลอกข้อความด้านล่างนี้ไปวาง แล้วกด Enter:
 
    ```
-   You are a helpful HR assistant for CPAll employees. You answer questions about company HR policies including leave requests, expense claims, employee benefits, and working hour regulations. Only answer questions related to HR topics.
+   You are a helpful HR assistant for CPAll employees. You help employees understand expense claim policy, and provide organization news or announcements. 
    ```
 
 2. Copilot Studio จะตอบรับและสรุปขอบเขตการทำงานของ Agent ให้ จากนั้นจะมีการกำหนดชื่อชั่วคราวให้ Agent นี้ เช่น "HR Assistant" หรือ "CPAll HR Bot" ขึ้นอยู่กับระบบ
@@ -62,18 +62,24 @@
 2. พิมพ์คำถามทดสอบต่อไปนี้ แล้วดูว่า Agent ตอบอย่างไร:
 
    ```
-   ลาป่วยได้กี่วันต่อปี?
+   ถ้าจะเดินทางไปประชุม เบิกค่าอะไรได้บ้าง?
    ```
 
-3. ตรวจสอบว่า Agent ตอบคำถามได้ตรงประเด็นหรือไม่ ซึ่งสังเกตว่า เป็นการตอบคำถามแบบทั่วๆ ไป บางกรณีอาจจะไปค้นข้อมูลใน internet มาตอบ
+3. ลองถามต่ออีก 1 ข้อในหัวข้อข่าวสารองค์กร:
 
-4. ทดสอบอีกครั้งกับคำถามที่อยู่นอกขอบเขต เพื่อดูว่า Agent ปฏิเสธอย่างไร:
+   ```
+   มีข่าวกิจกรรมล่าสุดอะไรบ้าง?
+   ```
+
+4. ตรวจสอบว่า Agent ตอบคำถามได้ตรงประเด็นหรือไม่ ซึ่งในขั้นตอนนี้คำตอบมักยังเป็นคำตอบแบบกว้างๆ หรือเชิงแนะนำทั่วไป เพราะเรายังไม่ได้เพิ่ม Knowledge จริงขององค์กรเข้าไป
+
+5. ทดสอบอีกครั้งกับคำถามที่อยู่นอกขอบเขต เพื่อดูว่า Agent ปฏิเสธอย่างไร:
 
    ```
    ช่วยแนะนำร้านอาหารใกล้สำนักงานหน่อย
    ```
 
-5. Agent ควรปฏิเสธคำถามข้อที่ 2 เนื่องจากอยู่นอกขอบเขตที่กำหนดไว้
+6. Agent ควรปฏิเสธคำถามข้อนี้ เนื่องจากอยู่นอกขอบเขตที่กำหนดไว้
 
 ---
 
@@ -83,14 +89,14 @@
 1. คุณสามารถเพิ่มรายละเอียดขอบเขตการทำงานให้ชัดขึ้นได้ โดยการกดปุ่ม **Edit** และเพิ่มคำสั่งในส่วน Instruction เข้าไปด้านล่างของเดิม เช่น:
 
    ```
-   Always answer in Thai language. Keep responses concise and professional. If you don't know the answer, suggest contacting the HR department directly.
+   Always answer in Thai language. Keep responses concise and professional. Only answer questions related to HR and internal organization communication topics. If the user asks about expense claims or organization news and you do not have enough confirmed information, clearly say that user need to consult HR or internal resources for accurate information.
    ```
    ![ภาพเพิ่ม Instruction](./images/set-instruction.png)
 
 2. กด **Save** เพื่อบันทึก instruction ใหม่
 3. ทดสอบอีกครั้งกับคำถามชุดเดิม:
    ```
-   ลาป่วยได้กี่วันต่อปี?
+   ถ้าจะเดินทางไปประชุม เบิกค่าอะไรได้บ้าง?
    ```
    ```
    ช่วยแนะนำร้านอาหารใกล้สำนักงานหน่อย
@@ -104,7 +110,8 @@
 
 ในแบบฝึกหัดนี้ คุณได้เรียนรู้:
 - การเข้าใช้งาน **Copilot Studio** และสร้าง Agent ใหม่
-- การกำหนดหน้าที่ให้ Agent ด้วย **ภาษาธรรมดา** (Describe Mode)
+- การกำหนดหน้าที่ให้ Agent ด้วย **ภาษาธรรมดา** (Describe Mode) เพื่อสร้าง HR Agent จาก Prompt
+- การกำหนดขอบเขตให้ Agent ช่วยตอบเรื่อง **การเบิกค่าใช้จ่าย** และ **ข่าวสารองค์กร**
 - การ **ทดสอบ Agent** เบื้องต้นผ่านหน้าพรีวิว
 
 ขั้นตอนถัดไป → [เพิ่ม Knowledge ให้ Agent](../part2-02-adding-knowledge/README.md)
