@@ -1,4 +1,4 @@
-# Advanced Microsoft 365 Copilot
+# Advanced Microsoft 365 Copilot & AI Agent
 
 ยินดีต้อนรับสู่หลักสูตร **Advanced Microsoft 365 Copilot** สำหรับพนักงาน CPAll 🎉
 
