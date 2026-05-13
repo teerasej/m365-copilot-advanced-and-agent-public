@@ -42,6 +42,7 @@
 | ไฟล์ | ใช้ใน | ดาวน์โหลด |
 |------|-------|-----------|
 | [expense_policy.pdf](https://github.com/teerasej/m365-copilot-advanced-and-agent-public/raw/main/exercises/part2-02-adding-knowledge/files/expense_policy.pdf) | Part 2 - Exercise 2: Adding Knowledge | [ดาวน์โหลดไฟล์](https://github.com/teerasej/m365-copilot-advanced-and-agent-public/raw/main/exercises/part2-02-adding-knowledge/files/expense_policy.pdf) |
+| [Advanced-M365-Copilot-and-Agent.pdf](https://github.com/teerasej/m365-copilot-advanced-and-agent-public/blob/main/files/Advanced-M365-Copilot-and-Agent.pdf) | ทุก Exercise | [ดาวน์โหลดไฟล์](https://github.com/teerasej/m365-copilot-advanced-and-agent-public/blob/main/files/Advanced-M365-Copilot-and-Agent.pdf) |
 
 ---
 
